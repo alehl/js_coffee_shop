@@ -46,9 +46,11 @@
 <script>
 
     // Set these variables to their DOM elements
+    var theCoffeeImage = document.getElementById("coffee-image");
+    theCoffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
 
-    var myImage;
-    var myRevenueMessage;
+    var revenueMessage = document.getElementById("revenue");
+    revenueMessage.innerText = " ";
 
     // use this JavaScript object in further study step
 
@@ -58,6 +60,24 @@
         "latte": 4.15,
         "hot chocolate": 2.50
     };
+
+    function showCup(){
+        theCoffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+    }
+
+    function showBeans(){
+        theCoffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    }
+
+    function makeCoffee(){
+
+        theCoffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+        setTimeout(showCup, 1000);
+        setTimeout(showBeans, 2500);
+    }
+
+theCoffeeImage.addEventListener('click', makeCoffee);
+
 
 
 </script>
